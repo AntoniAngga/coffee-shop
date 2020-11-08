@@ -46,4 +46,14 @@ this is my notes 🗒, for create something with nest command.
 $ nest generate controller <nameController>
 // shorthand: $ nest g co <nameController>
 ```
+
 this create some folder with controller name, and some spec test
+
+### Generate a Services
+
+```bash
+nest generate service {name}
+// shorthand: nest g s {name}
+```
+
+this is create service with controller name

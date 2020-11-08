@@ -8,9 +8,11 @@ import {
   Post,
   Query,
 } from '@nestjs/common';
+import { CoffeesService } from './coffees.service';
 
 @Controller('coffees') /* this is routes and contoller naming */
 export class CoffeesController {
+  constructor(private readonly coffeesService: CoffeesService) {}
   // GET ALL here
   @Get()
   findAll(@Query() paginationParams) {
