@@ -1,6 +1,6 @@
 import { Controller, Get } from '@nestjs/common';
 
-@Controller('coffee')
+@Controller('coffees') /* this is routes and contoller naming */
 export class CoffeeController {
   @Get()
   findAll() {
