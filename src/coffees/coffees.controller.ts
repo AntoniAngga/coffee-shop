@@ -1,11 +1,21 @@
-import { Body, Controller, Delete, Get, Param, Patch, Post } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Patch,
+  Post,
+  Query,
+} from '@nestjs/common';
 
 @Controller('coffees') /* this is routes and contoller naming */
 export class CoffeesController {
   // GET ALL here
   @Get()
-  findAll() {
-    return 'This Action returns all coffeess';
+  findAll(@Query() paginationParams) {
+    const { limit, offset } = paginationParams;
+    return `This Action returns all coffeess ${limit} and ${offset}`;
   }
 
   // GET By id here
@@ -29,6 +39,6 @@ export class CoffeesController {
   // Delete Here
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return `This action delete ${id}`
+    return `This action delete ${id}`;
   }
 }
