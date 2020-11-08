@@ -16,31 +16,30 @@ export class CoffeesController {
   // GET ALL here
   @Get()
   findAll(@Query() paginationParams) {
-    const { limit, offset } = paginationParams;
-    return `This Action returns all coffeess ${limit} and ${offset}`;
+    return this.coffeesService.findAll();
   }
 
   // GET By id here
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return `This Action return params ID ${id}`;
+    return this.coffeesService.findOne(id);
   }
 
   // POST Here
   @Post()
   create(@Body() body) {
-    return body;
+    return this.coffeesService.create(body);
   }
 
   // Patch Update Here
   @Patch(':id')
   update(@Param('id') id: string, @Body() body) {
-    return `This action updates ${id} with data ${body}`;
+    return this.coffeesService.update(id, body);
   }
 
   // Delete Here
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return `This action delete ${id}`;
+    return this.coffeesService.remove(id);
   }
 }
